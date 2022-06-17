@@ -1,0 +1,79 @@
+
+
+
+
+
+
+What are commands ?
+
+> executable programs, usually compiled binaries.
+> commands built into the shell, as shell builtins
+> shell function
+> aliases
+
+--------------------------------------------LEARN MORE ABOUT COMMANDS !--------------------------------------------
+
+type command 			: is a builtin that shows what type of command is the "command" passed to it.
+
+which command 			: is a command that shows the exact location of the executable command specified with "command" !
+
+help command 			: shows help only for shell builtins.
+
+executblecommand --help 	: this displayes usage information
+
+man program 			: shows manual for executable programs 
+
+	mans are divided like this 				
+	
+					TITLE
+					SYNOPSIS of the syntax
+					DESCRIPTION of program purpose
+					LISTING & DESCRIPTION of command's options
+
+apropos word 			: searches for the "word" into man pages
+
+whatis command 		: quick description of "command"
+
+info programname 		: info pages are the GNU alternative to man pages.
+
+THe most of the system's man pages are into usr/share/doc directory 
+
+--------------------------------------------CREATING OUR COMMANDS USING ALIASES--------------------------------------------
+
+alias aliasname='command list'
+
+unalias aliasname removes the alias
+
+--------------------------------------------REDIRECTION !--------------------------------------------
+
+
+redirecting stout
+
+command > file_to_redirect
+
+Using '>' to redirect always rewrites from the beginning the file, losing what was previously there.
+Appending is done using '>>'
+
+
+redirecting sterror
+
+To redirect others standards than stout we need to refer to file descriptors, for example sterr has filedescriptor 2 thus we need to write command 2> file_to _redirect
+
+
+
+unwanted input can be sent to /dev/null , a but bucket that does nothing with what receives.
+
+
+cat [file...] opens files without paging.
+Redirecting cat [listoffiles] is a way to join them.
+
+PIPELINES
+
+command1 | command2 takes the stdout of command1 and uses it as stdin of command2
+
+Filters are commands of a pipelined that processes the data received and then let it 
+continue to flow throw the pipeline
+
+command1 | command2 | command3 | command4 
+
+in this example command2 and command3 are filters
